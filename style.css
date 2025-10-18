@@ -1,0 +1,351 @@
+/* ===================== ESTILOS GENERALES ===================== */
+/* Aplica a todo (*) */
+* {
+    margin: 0; /* Quita márgenes por defecto */
+    padding: 0; /* Quita rellenos por defecto */
+    box-sizing: border-box; /* Evita que el padding altere el tamaño del elemento */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente general */
+}
+        
+body {
+    background-color: #0a0a0f; /* Fondo negro azulado */
+    color: #e0e0e0; /* Color de texto claro */
+    line-height: 1.6; /* Espaciado entre líneas */
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(0, 50, 120, 0.1) 0%, transparent 20%), /* Efecto de luz azul suave */
+        radial-gradient(circle at 85% 30%, rgba(0, 80, 180, 0.1) 0%, transparent 20%);
+    min-height: 100vh; /* Altura mínima del cuerpo igual al alto de la pantalla */
+}
+        
+/* ===================== ENCABEZADO PRINCIPAL ===================== */
+h1 {
+    text-align: center; /* Centra el texto */
+    color: #4d9fff; /* Azul brillante */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    font-size: 2.5rem; /* Tamaño grande de letra */
+    text-transform: uppercase; /* Convierte texto a mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    text-shadow: 0 0 10px rgba(77, 159, 255, 0.5); /* Sombra azul brillante */
+    background: linear-gradient(to right, #0a0a0f, #1a1a2e, #0a0a0f); /* Fondo degradado */
+    padding: 15px; /* Relleno interno */
+    border-bottom: 2px solid #4d9fff; /* Línea inferior azul */
+}
+        
+/* ===================== CONTENEDOR DEL ENCABEZADO ===================== */
+.encabezado {
+    background-color: #1a1a2e; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    padding: 25px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 0 15px 30px; /* Márgenes exteriores */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra */
+    border: 1px solid #2a2a4a; /* Borde tenue */
+    position: relative; /* Necesario para efectos internos */
+    overflow: hidden; /* Oculta contenido que sobresalga */
+}
+        
+.encabezado::before {
+    content: ''; /* Elemento decorativo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px; /* Línea delgada superior */
+    background: linear-gradient(to right, #0066ff, #4d9fff, #0066ff); /* Efecto brillante */
+}
+        
+/* ===================== LOGO E IMÁGENES DEL ENCABEZADO ===================== */
+.encabezado a {
+    display: flex; /* Coloca imágenes en fila */
+    gap: 30px; /* Espaciado entre ellas */
+    justify-content: center; /* Centra horizontalmente */
+    margin-bottom: 40px; /* Espacio inferior */
+}
+        
+.encabezado a img {
+    max-width: 25 px; /* Tamaño máximo */
+    height: auto; /* Mantiene proporción */
+    border-radius: 1 px; /* Esquinas redondeadas */
+    transition: all 0.3s ease; /* Animación suave */
+    border: 2px solid #2a2a4a; /* Borde oscuro */
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3); /* Brillo azul */
+}
+        
+.encabezado a img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente */
+    border-color: #4d9fff; /* Borde azul brillante */
+    box-shadow: 0 0 15px rgba(77, 159, 255, 0.6); /* Más brillo */
+}
+        
+/* ===================== TEXTO DESCRIPTIVO DEL ENCABEZADO ===================== */
+.encabezado h2 {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: center;
+    color: #b0b0d0; /* Gris azulado */
+}
+        
+/* ===================== NAVEGACIÓN ===================== */
+nav {
+    display: flex; /* Barra horizontal */
+    flex-wrap: wrap; /* Permite salto de línea */
+    justify-content: center; /* Centra los botones */
+    gap: 15px; /* Espacio entre botones */
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #2a2a4a; /* Línea separadora */
+}
+        
+nav a {
+    color: #e0e0e0; /* Texto claro */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px 20px; /* Tamaño del botón */
+    border-radius: 6px; /* Bordes suaves */
+    background: linear-gradient(to bottom, #2a2a4a, #1a1a2e); /* Fondo degradado */
+    transition: all 0.3s ease; /* Transición suave */
+    font-weight: bold; /* Texto en negrita */
+    border: 1px solid #3a3a5a; /* Borde oscuro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    position: relative; /* Para el brillo animado */
+    overflow: hidden;
+}
+        
+nav a::before {
+    content: ''; /* Brillo animado */
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(77, 159, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+        
+nav a:hover {
+    background: linear-gradient(to bottom, #3a3a6a, #2a2a4a); /* Fondo más claro */
+    transform: translateY(-3px); /* Efecto de elevación */
+    box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
+    border-color: #4d9fff;
+}
+        
+nav a:hover::before {
+    left: 100%; /* Mueve el brillo de izquierda a derecha */
+}
+    
+/* ===================== CONTENIDO PRINCIPAL ===================== */
+main {
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrado */
+    padding: 0 15px;
+}
+        
+/* ===================== SECCIONES ===================== */
+section {
+    background-color: #1a1a2e; /* Fondo oscuro */
+    margin-bottom: 30px; /* Espacio entre secciones */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2a2a4a;
+    transition: transform 0.3s ease;
+}
+        
+section:hover {
+    transform: translateY(-5px); /* Se levanta un poco al pasar el mouse */
+}
+        
+section h3 {
+    color: #4d9fff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #4d9fff;
+    padding-bottom: 8px;
+    text-shadow: 0 0 5px rgba(77, 159, 255, 0.3);
+}
+        
+section p {
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #c0c0e0;
+}
+        
+/* ===================== IMÁGENES DENTRO DE SECCIONES ===================== */
+section a img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: block;
+    transition: all 0.3s ease;
+    border: 2px solid #2a2a4a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+        
+section a img:hover {
+    transform: scale(1.02);
+    border-color: #4d9fff;
+    box-shadow: 0 0 15px rgba(77, 159, 255, 0.5);
+}
+        
+/* ===================== SECCIONES SUB1, SUB2, SUB3 ===================== */
+section.sub1 {
+    background-color: #151525;
+    border-left: 5px solid #4d9fff;
+}
+        
+section.sub2 {
+    background-color: #151525;
+    border-left: 5px solid #00a8ff;
+}
+        
+section.sub3 {
+    background-color: #151525;
+    border-left: 5px solid #9d4dff;
+}
+        
+/* ===================== FOOTER ===================== */
+footer {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    margin-top: 50px;
+    border-top: 3px solid #4d9fff;
+}
+        
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+        
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+        
+.columna {
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+        
+.columna-25 {
+    width: 25%;
+}
+        
+footer h3 {
+    color: #4d9fff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #2a2a4a;
+    padding-bottom: 5px;
+}
+        
+footer ul {
+    list-style-type: none; /* Quita viñetas */
+}
+        
+footer ul li {
+    margin-bottom: 10px;
+}
+        
+footer a {
+    color: #b0b0d0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+        
+footer a:hover {
+    color: #4d9fff; /* Cambia a azul brillante */
+}
+        
+footer img {
+    max-width: 30px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+        
+.barra-footer {
+    background-color: #0a0a0f;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #2a2a4a;
+    color: #b0b0d0;
+}
+        
+/* ===================== DISEÑO RESPONSIVO ===================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+            
+    .encabezado {
+        margin: 0 10px 20px;
+        padding: 15px;
+    }
+            
+    .encabezado a {
+        flex-direction: column;
+        align-items: center;
+    }
+            
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+            
+    nav a {
+        width: 80%;
+        text-align: center;
+    }
+            
+    section {
+        padding: 15px;
+    }
+            
+    .columna-25 {
+        width: 100%; /* Cada columna ocupa todo el ancho */
+    }
+}
+        
+/* ===================== EFECTO DE FONDO (REJILLA CIBERNÉTICA) ===================== */
+.cyber-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 80, 180, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 80, 180, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px; /* Tamaño del patrón de cuadrícula */
+    pointer-events: none; /* No interfiere con clics */
+    z-index: -1; /* Queda detrás de todo */
+}
+/* Estilos del botón de subir */
+#btnSubir {
+  display: none; /* Oculto al inicio */
+  position: fixed; /* Siempre visible aunque se haga scroll */
+  bottom: 20px; /* Espaciado desde abajo */
+  right: 20px; /* Espaciado desde la derecha */
+  z-index: 99; /* Que quede por encima del contenido */
+  background-color: #1a20c0; /* Café suave o el color que uses */
+  color: white;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+#btnSubir:hover {
+  background-color: #626281; /* Color un poco más claro */
+  transform: scale(1.1);
+}
